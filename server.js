@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const port = 3000;
 
 // Necessary NPM packages
 const bcrypt = require('bcrypt-nodejs');
@@ -52,4 +51,4 @@ app.put('/image', (req, res) => { image.handleImage(req, res, db) })
 app.post('/imageurl', (req, res) => { image.handleAPICall(req, res) })
 
 // Server connection to port
-app.listen(port, console.log(`Your App is listening on port ${port}`));
+app.listen(process.env.PORT || 3000, console.log(`Your App is listening on port ${process.env.PORT}`));
