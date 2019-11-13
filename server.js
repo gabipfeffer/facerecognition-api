@@ -28,14 +28,9 @@ const db = knex({
 app.use(express.json());
 app.use(cors());
 
+
 // GET users from database ~root
-app.get('/', (req, res) => {
-    return db.select('*')
-            .from('users')
-            .then(users => {
-                res.json(users)
-            })
-})
+app.get('/', (req, res) => { res.send('it is working!') })
 
 // User login
 app.post('/signin', (req, res) => { signin.handleSignIn(req, res, db, bcrypt) });
